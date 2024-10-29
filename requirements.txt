@@ -1,0 +1,7 @@
+openai
+pandas
+langchain_openai
+langchain-community
+streamlit
+watchdog
+qdrant-client
