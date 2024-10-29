@@ -1,8 +1,10 @@
-import streamlit as st
-from qdrant_client import QdrantClient
-from langchain_community.embeddings import OpenAIEmbeddings
 import os
-from typing import Dict, List, Any
+from typing import Any, Dict, List
+
+import streamlit as st
+from langchain_community.embeddings import OpenAIEmbeddings
+from qdrant_client import QdrantClient
+
 
 def initialize_session_state():
     """Initialize session state variables for API keys and URLs with environment defaults."""
