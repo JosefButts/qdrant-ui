@@ -9,6 +9,7 @@ from embeddings import get_embeddings
 from filters import create_filter_interface
 
 
+
 def main():
     initialize_session_state()
     create_sidebar()
@@ -22,7 +23,12 @@ def main():
     limit = st.number_input("Limit", min_value=1, max_value=20, value=5)
 
     # Get collections
-    collections = client.get_collections()
+    try:
+        collections = client.get_collections()
+    except Exception as e:
+        st.error(f"Error getting collections: {str(e)}")
+        return
+    
     collection_names = [collection.name for collection in collections.collections]
     collection_name = st.selectbox("Select Collection", collection_names)
 
