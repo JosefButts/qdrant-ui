@@ -19,8 +19,8 @@ This Streamlit application provides an advanced interface for querying a [Qdrant
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/JosefButts/qdrant-ui.git
+   cd qdrant-ui
    ```
 
 2. **Create a Virtual Environment**
@@ -63,7 +63,7 @@ Alternatively, you can enter your API keys and URLs directly in the Streamlit ap
 1. **Run the Application**
 
    ```bash
-   streamlit run app.py
+   streamlit run src/app.py
    ```
 
 2. **Configure API Settings**
@@ -123,4 +123,4 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Contact
 
-For any questions or suggestions, please contact [your-email@example.com](mailto:your-email@example.com).
+For any questions or suggestions, please contact [buttsjosef@gmail.com](mailto:buttsjosef@gmail.com).
