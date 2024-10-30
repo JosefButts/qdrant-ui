@@ -3,10 +3,10 @@
 import streamlit as st
 from qdrant_client import QdrantClient
 
-from session import initialize_session_state
-from sidebar import create_sidebar
 from embeddings import get_embeddings
 from filters import create_filter_interface
+from session import initialize_session_state
+from sidebar import create_sidebar
 
 
 def main():

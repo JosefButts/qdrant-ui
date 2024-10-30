@@ -1,9 +1,6 @@
-import os
 from typing import Any, Dict, List
 
 import streamlit as st
-from langchain_community.embeddings import OpenAIEmbeddings
-from qdrant_client import QdrantClient
 
 
 def create_filter_condition(
