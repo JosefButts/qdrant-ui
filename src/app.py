@@ -7,8 +7,8 @@ from session import initialize_session_state
 from sidebar import create_sidebar
 from embeddings import get_embeddings
 from filters import create_filter_interface
-
-
+from display_results import display_results_table
+import pandas as pd
 
 def main():
     initialize_session_state()
@@ -63,17 +63,29 @@ def main():
                     query_filter=filter_clause,
                     append_payload=True,
                 )
-
+              
+            # if 'results' in locals() or 'results' in globals():
+            #     display_results_table(results)
+            # else:
+            #     st.error("No results data found")
+            
             if not results:
                 st.write("No results found")
-
+            formatted_results = []
             for i, hit in enumerate(results):
                 with st.expander(f"Result {i+1}", expanded=True):
                     payload_dict = {
                         key: hit.payload.get(key, "N/A") for key in hit.payload.keys()
                     }
+                    payload_dict["score"] = hit.score
+                    formatted_results.append(payload_dict)
                     st.json(payload_dict)
+                    
+            with st.expander(f"Result {i+1}", expanded=True):
 
+                df = pd.DataFrame(formatted_results)
+                st.dataframe(df)
+                
         except Exception as e:
             st.error(f"Error during search: {str(e)}")
             if st.session_state.embedding_type == "fastembed":
