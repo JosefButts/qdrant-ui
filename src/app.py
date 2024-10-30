@@ -20,7 +20,9 @@ def main():
     )
 
     query = st.text_input("Enter your query:")
-    limit = st.number_input("Limit", min_value=1, max_value=20, value=5)
+    limit = st.number_input("Limit", min_value=1, max_value=30, value=5)
+    # make score threshold optional
+    score_threshold = st.number_input("Score Threshold", min_value=0.0, max_value=1.0, value=0.0)
 
     # Get collections
     try:
@@ -50,6 +52,7 @@ def main():
                     query_vector=query_embedding,
                     limit=limit,
                     query_filter=filter_clause,
+                    score_threshold=score_threshold,
                 )
             else:
                 # FastEmbed
