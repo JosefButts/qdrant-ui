@@ -1,10 +1,10 @@
 # Advanced Qdrant Query Interface with Streamlit
 
-This Streamlit application provides an advanced interface for querying a [Qdrant](https://qdrant.tech/) vector database. It allows users to perform semantic searches with optional filters using either OpenAI embeddings or Qdrant's built-in FastEmbed model.
+This Streamlit application provides an advanced interface for querying a [Qdrant](https://qdrant.tech/) vector database. It allows users to perform semantic searches with optional filters using either OpenAI embeddings with future plans to incorporate Qdrant's built-in FastEmbed model.
 
 ## Features
 
-- **Embedding Options**: Choose between OpenAI embeddings and Qdrant's FastEmbed for query vectorization.
+- **Embedding Options**: Choose between OpenAI embeddings for query vectorization.  Qdrant's FastEmbed will be implemented in the near future
 - **Environment Variable Support**: Utilize environment variables for API keys and URLs.
 - **Dynamic Filter Interface**: Create complex filters (`must`, `must_not`, `should`) based on metadata fields.
 - **Collection Management**: Select from available collections in your Qdrant database.
@@ -103,7 +103,7 @@ All required Python packages are listed in `requirements.txt`.
 
 ## Notes
 
-- **FastEmbed Configuration**: Ensure that FastEmbed is properly configured on your Qdrant server if you choose to use it.
+
 - **Metadata Keys**: The filter interface dynamically loads metadata keys from your selected collection.
 
 ## License

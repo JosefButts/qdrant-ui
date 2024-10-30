@@ -12,7 +12,7 @@ def create_sidebar():
             # Embedding type selector
             st.session_state.embedding_type = st.radio(
                 "Embedding Type",
-                options=['openai', 'fastembed'],
+                options=['openai'],  # 'fastembed' not totally enabled yet
                 index=0 if st.session_state.embedding_type == 'openai' else 1,
                 help="Select embedding provider"
             )
